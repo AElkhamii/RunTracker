@@ -1,3 +1,4 @@
+// pluginManagement used to fetch and download plugins online by using google - mavenCentral - gradlePluginPortal
 pluginManagement {
     // Convention Plugins
     // Any thing inside includedBuild module considered as separate project inside our app at least in sense of gradle.
@@ -15,6 +16,8 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+// dependencyResolutionManagement used to fetch and download plugins dependencies by using google - mavenCentral - gradlePluginPortal
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -23,9 +26,11 @@ dependencyResolutionManagement {
     }
 }
 
+// Write project name
 rootProject.name = "RunTracker"
 // makes you include custom modules dependencies easier.
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+// Include all modules in the RunTracker APP
 include(":app")
 include(":auth:data")
 include(":auth:domain")
