@@ -2,7 +2,7 @@
 //    alias(libs.plugins.android.application)
 //    alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.runtracker.android.application.compose)
-     alias(libs.plugins.runtracker.jvm.ktor)
+    alias(libs.plugins.runtracker.jvm.ktor)
     alias(libs.plugins.mapsplatform.secrets.plugin)
 }
 

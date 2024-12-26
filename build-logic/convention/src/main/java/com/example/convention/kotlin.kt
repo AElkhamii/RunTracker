@@ -9,6 +9,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+// function for kotlin Android library gradle layer
 // Internal means this function or class can only be used in this module
 internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*,*,*,*,*,*>

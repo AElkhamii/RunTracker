@@ -24,6 +24,7 @@ class AndroidFeatureUiConventionPlugin: Plugin<Project> {
                 apply("runtracker.android.library.compose")
             }
 
+            // Just add some dependencies to AndroidLibraryComposeConventionPlugin
             dependencies {
                 addUiLayerDependency(target)
             }
