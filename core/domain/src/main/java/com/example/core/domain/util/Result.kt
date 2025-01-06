@@ -1,4 +1,4 @@
-package com.example.core.domain.util
+ package com.example.core.domain.util
 
 
 /* Error wrapper */
