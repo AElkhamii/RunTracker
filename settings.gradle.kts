@@ -26,6 +26,8 @@ dependencyResolutionManagement {
     }
 }
 
+gradle.startParameter.excludedTaskNames.addAll(listOf(":build-logic:convention:testClasses"))
+
 // Write project name
 rootProject.name = "RunTracker"
 // makes you include custom modules dependencies easier.
