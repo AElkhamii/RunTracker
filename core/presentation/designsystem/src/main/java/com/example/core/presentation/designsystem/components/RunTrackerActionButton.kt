@@ -37,8 +37,8 @@ fun RunTrackerActionButton(
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primary,
             contentColor = MaterialTheme.colorScheme.onPrimary,
-            disabledContentColor = MaterialTheme.colorScheme.onSurfaceVariant, //runique gray
-            disabledContainerColor = MaterialTheme.colorScheme.background //runique black
+            disabledContainerColor = MaterialTheme.colorScheme.onSurfaceVariant, //runique gray
+            disabledContentColor = MaterialTheme.colorScheme.background //runique black
         ),
         shape = RoundedCornerShape(100f),
         modifier = modifier.height(IntrinsicSize.Min) // It will assign fixed height to our button, so it gives the size that it need depend s on the size of children composable.
