@@ -33,6 +33,9 @@ android {
 }
 
 dependencies {
+    //koin
+    implementation(libs.bundles.koin)
+
     //logging library
     implementation(libs.timber)
 

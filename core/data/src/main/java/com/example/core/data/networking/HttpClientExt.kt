@@ -55,12 +55,12 @@ suspend inline fun <reified Response:Any> HttpClient.delete(
 }
 
 /* Third: Post request */
-suspend inline fun <reified Request,reified Response:Any> HttpClient.poste(
+suspend inline fun <reified Request,reified Response:Any> HttpClient.post(
     route: String,
     body: Request
 ): Result<Response, DataError.Network>{
     return safeCall {
-        post {
+        this.post {
             url(constructRoute(route))
             setBody(body)
         }

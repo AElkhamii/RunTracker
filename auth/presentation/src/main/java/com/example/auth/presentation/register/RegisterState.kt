@@ -15,5 +15,5 @@ data class RegisterState (
     /* For the remaining state such as password validation state, we will create in auth domain module another data class to validate these validations */
     val passwordValidationState: PasswordValidationState = PasswordValidationState(),
     val isRegistering: Boolean = false,
-    val canRegister: Boolean = passwordValidationState.isValidPassword && !isRegistering
+    val canRegister: Boolean = false
 )

@@ -10,11 +10,13 @@
     <string name="login">Login</string>
     <string name="example_email">example@test.com</string>
     <string name="email">Email</string>
-    <string name="must_be_valid_email">Must be valid email</string>
+    <string name="must_be_valid_email">Must be valid email.</string>
     <string name="password">Password</string>
-    <string name="at_least_x_characters">At least %d character</string>
-    <string name="at_least_one_number">At least one number</string>
-    <string name="contains_lowercase_character">Contains lowercase character</string>
-    <string name="contains_uppercase_character">Contains Uppercase character</string>
+    <string name="at_least_x_characters">At least %d character.</string>
+    <string name="at_least_one_number">At least one number.</string>
+    <string name="contains_lowercase_character">Contains lowercase character.</string>
+    <string name="contains_uppercase_character">Contains Uppercase character.</string>
     <string name="register">Register</string>
+    <string name="error_email_exists">A user with that email already exists.</string>
+    <string name="registration_successful">Registration Successful! you can login now.</string>
 </resources>

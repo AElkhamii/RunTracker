@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 
-/* The main purpose of this interface is to determine if the sring you are going to use will be saved in the string.xml or not */
+/* The main purpose of this interface is to determine if the string you are going to use will be saved in the string.xml or not */
 sealed interface UiText {
     /* String that we do not want to localize (we do not want to save his string)*/
     data class DynamicString(val value: String): UiText

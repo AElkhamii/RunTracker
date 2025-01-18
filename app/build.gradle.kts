@@ -75,6 +75,9 @@ dependencies {
     // Crypto
     implementation(libs.androidx.security.crypto.ktx)
 
+    // Koin
+    implementation(libs.bundles.koin)
+
     //api makes this module is available for modules that depend on this module. Because the dynamic feature module will include thia app module
     api(libs.core)
 
