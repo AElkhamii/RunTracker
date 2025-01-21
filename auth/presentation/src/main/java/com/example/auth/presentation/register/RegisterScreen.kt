@@ -1,4 +1,6 @@
-@file:OptIn(ExperimentalFoundationApi::class, ExperimentalFoundationApi::class)
+@file:OptIn(ExperimentalFoundationApi::class, ExperimentalFoundationApi::class,
+    ExperimentalFoundationApi::class
+)
 
 package com.example.auth.presentation.register
 
@@ -83,7 +85,14 @@ fun RegisterScreenRoot(
 
     RegisterScreen(
         state = viewModel.state,
-        onAction = viewModel::onAction
+//        onAction = viewModel::onAction
+        onAction = {action ->
+            when(action){
+                RegisterAction.OnLoginClick -> onSignInClick()
+                else ->  Unit
+            }
+            viewModel.onAction(action)
+        }
     )
 }
 
@@ -111,7 +120,7 @@ fun RegisterScreen(
                 withStyle(
                     style = SpanStyle(
                         fontFamily = Poppins,
-                        color = RuniqueGray
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 ){
                     append(stringResource(id = R.string.already_have_an_account) + " ")
@@ -130,7 +139,6 @@ fun RegisterScreen(
                     }
                 }
             }
-
             ClickableText(
                 text = annotatedString,
                 onClick = { offset ->

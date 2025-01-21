@@ -79,7 +79,7 @@ class RegisterViewModel(
     private fun register(){
         viewModelScope.launch {
             state = state.copy(isRegistering = true)
-            val result = repository.register(state.email.text.toString().trim(), state.password.text.toString().trim())
+            val result = repository.register(state.email.text.toString().trim(), state.password.text.toString())
 
             state = state.copy(isRegistering = false)
 

@@ -2,14 +2,17 @@ package com.example.runtracker
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
+import com.example.auth.data.AuthRepositoryImpl
 import com.example.auth.presentation.intro.IntroScreenRoot
+import com.example.auth.presentation.login.LoginScreenRoot
+import com.example.auth.presentation.login.LoginViewModel
 import com.example.auth.presentation.register.RegisterScreenRoot
+import io.ktor.client.HttpClient
 
 //recommendation of creating one navigation graph per feature
 
@@ -22,6 +25,7 @@ fun NavigationRoot(
         startDestination = "auth"
     ) {
         authGraph(navController)
+        runGraph(navController)
     }
 }
 
@@ -46,11 +50,11 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController){
                 onSignInClick = {
                     navController.navigate("login"){
                         // When ever you switch between login and register screen, you will not create new backstack each time you switch between them
-                        popUpTo("register"){
+                        popUpTo("register"){//pop the back stack up tp
                             inclusive = true
-                            saveState = true
+                            saveState = true // means save one instance from this screen to come back to
                         }
-                        restoreState = true
+                        restoreState = true // to restore the last state that the screen has been on
                     }
                 },
                 onSuccessfulRegistration = {
@@ -59,7 +63,37 @@ private fun NavGraphBuilder.authGraph(navController: NavHostController){
             )
         }
         composable(route = "login"){
-            Text(text = "Login Screen")
+            LoginScreenRoot(
+                onLoginSuccess = {
+                    navController.navigate("run"){
+                        // to Not return to login screen directly but to auth screen
+                        popUpTo("auth") {
+                            inclusive = true
+                        }
+                    }
+                },
+                onSignUp = {
+                    navController.navigate("register"){
+                        popUpTo("login"){
+                            inclusive = true
+                            saveState = true
+                        }
+                        restoreState = true
+                    }
+                }
+            )
+        }
+    }
+}
+
+
+private fun NavGraphBuilder.runGraph(navController: NavHostController){
+    navigation(
+        startDestination = "run_overview",
+        route = "run"
+    ){
+        composable("run_overview"){
+            Text(text = "Run Overview")
         }
     }
 }

@@ -54,6 +54,7 @@ class HttpClientFactory(
                 bearer {
                     loadTokens {
                         val info = sessionStorage.get()
+                        // Load ktor with available tokens
                         BearerTokens(
                             accessToken = info?.accessToken ?: "",
                             refreshToken = info?.refreshToken ?: ""
@@ -76,8 +77,10 @@ class HttpClientFactory(
                                 userId = info?.userId ?: ""
                             )
 
+                            // update shared preference
                             sessionStorage.set(newAuthInfo)
 
+                            // update ktor with new tokens
                             BearerTokens(
                                 accessToken = newAuthInfo.accessToken,
                                 refreshToken = newAuthInfo.refreshToken
