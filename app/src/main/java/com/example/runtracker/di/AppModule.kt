@@ -7,7 +7,9 @@ import com.example.auth.data.EmailPatternValidator
 import com.example.auth.domain.PatternValidator
 import com.example.auth.domain.UserDataValidator
 import com.example.core.domain.SessionStorage
+import com.example.runtracker.MainViewModel
 import org.koin.android.ext.koin.androidApplication
+import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 /* why koin better in multi-module
@@ -25,4 +27,6 @@ val appModule = module {
             EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
         )
     }
+
+    viewModelOf(::MainViewModel)
 }

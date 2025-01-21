@@ -19,10 +19,12 @@ import io.ktor.client.HttpClient
 @Composable
 fun NavigationRoot(
     navController: NavHostController,
+    isLoggedIn: Boolean
 ) {
     NavHost(
         navController = navController,
-        startDestination = "auth"
+        /** Change start destination of our graph depend on isLoggedIn state **/
+        startDestination = if(isLoggedIn) "run" else "auth"
     ) {
         authGraph(navController)
         runGraph(navController)
