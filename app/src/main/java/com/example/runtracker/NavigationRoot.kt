@@ -7,12 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import com.example.auth.data.AuthRepositoryImpl
 import com.example.auth.presentation.intro.IntroScreenRoot
 import com.example.auth.presentation.login.LoginScreenRoot
-import com.example.auth.presentation.login.LoginViewModel
 import com.example.auth.presentation.register.RegisterScreenRoot
-import io.ktor.client.HttpClient
 
 //recommendation of creating one navigation graph per feature
 

@@ -42,7 +42,6 @@ import com.example.core.presentation.designsystem.EmailIcon
 import com.example.core.presentation.designsystem.Poppins
 import com.example.core.presentation.designsystem.RunTrackerTheme
 import com.example.core.presentation.designsystem.RuniqueDarkRed
-import com.example.core.presentation.designsystem.RuniqueGray
 import com.example.core.presentation.designsystem.RuniqueGreen
 import com.example.core.presentation.designsystem.components.GradiantBackground
 import com.example.core.presentation.designsystem.components.RunTrackerActionButton
@@ -101,7 +100,7 @@ fun RegisterScreen(
     state: RegisterState,
     onAction: (RegisterAction) -> Unit
 ){
-    GradiantBackground() {
+    GradiantBackground {
         Column(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())

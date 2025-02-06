@@ -3,14 +3,9 @@ package com.example.runtracker.di
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import com.example.auth.data.EmailPatternValidator
-import com.example.auth.domain.PatternValidator
-import com.example.auth.domain.UserDataValidator
-import com.example.core.domain.SessionStorage
 import com.example.runtracker.MainViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModelOf
-import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 /* why koin better in multi-module
  * 1) Because it is completely kotlin code which can be used in KMP
